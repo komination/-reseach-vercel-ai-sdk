@@ -1,0 +1,9 @@
+FROM node:lts-bullseye
+
+RUN npm i -g @openai/codex
+
+USER node
+
+# Install Bun for node user
+RUN curl -fsSL https://bun.sh/install | bash
+ENV PATH="/home/node/.bun/bin:$PATH"

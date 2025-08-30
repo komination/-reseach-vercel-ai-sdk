@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .devcontainer
+      dockerfile: dockerfile.devcontainer
+      args: 
+        - USER=${USER_NAME}
+        - UID=${UID}
+    tty: true
+    env_file:
+      - ./.env
+    volumes:
+      - ./:/app
+    
+  
